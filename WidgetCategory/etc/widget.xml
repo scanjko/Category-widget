@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="pixel_categorywidget" class="Pixel\WidgetCategory\Block\Widget\CategoryWidget">
+		<label translate="true">Category List Widget</label>
+		<description>Store Default 1st level Category List Widget</description>
+		<parameters>
+			<parameter name="wrapperclass" xsi:type="text"  visible="true" sort_order="1">
+				<label translate="true">Wrapping class</label>
+			</parameter>
+
+			<parameter name="multi_category_chooser" xsi:type="block" visible="true" required="true" sort_order="10">
+				<label translate="true">Select Categories</label>
+				<description translate="true">Please select only one parent category!</description>
+				<block class="Pixel\WidgetCategory\Block\Adminhtml\Category\Widget\Chooser" />
+			</parameter>
+
+			<parameter name="category-option" xsi:type="select" required="true" visible="true">
+                	<label translate="true">Image Type</label>
+                <options>
+                    <option name="name-text" value="value-category-text" selected="true">
+                        <label translate="true">Category plain text</label>
+                    </option>
+                    <option name="name-image" value="value-category-image">
+                        <label translate="true">Category with image</label>
+                    </option>
+
+                </options>
+            </parameter>
+
+			<parameter name="catdesc" xsi:type="text"  visible="true" sort_order="10">
+				<label translate="true">Short text</label>
+				<description translate="true">Add short description for Brands block</description>
+			</parameter>
+
+			<!--<parameter name="multi_product_chooser" xsi:type="block" visible="true" required="true" sort_order="10">-->
+				<!--<label translate="true">Select Category</label>-->
+				<!--<block class="Pixel\WidgetCategory\Block\Chooser" />-->
+			<!--</parameter>-->
+
+		</parameters>
+	</widget>
+</widgets>

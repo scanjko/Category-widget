@@ -1,0 +1,61 @@
+<?php
+$categories = $this->getCategoryCollection();
+$whatToShow = $this->categoryShow();
+$selectedCategories = $this->getSelectedCategories();
+$wrapperClass = $block->getWrapperClass();
+?>
+
+<div class="categoryList">
+
+
+    <?php if ($whatToShow === 'value-category-text'): ?>
+
+        <div class="block-list-wrapper <?= $wrapperClass; ?>">
+            <div class="block-content catalog-category <?= $wrapperClass; ?>">
+                <?php foreach ($categories as $category): ?>
+
+                    <div>
+                        <?php
+
+
+                        ?>
+                    </div>
+
+                <?php endforeach; ?>
+
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+    <?php if ($whatToShow === 'value-category-image'): ?>
+
+        <div class="categoryList__block <?= $wrapperClass . ' ' . $whatToShow ?> ">
+
+            <?php foreach ($categories as $category): ?>
+
+                <div class="categoryList__item">
+
+                    <a href="<?= $category->getUrl(); ?>">
+                        <h3 class="categoryList__item-title"><?= $category->getName(); ?></h3>
+                        <?php
+                        $categoryUrl = $block->getImage($category->getId());
+
+                        ?>
+
+                        <div class="categoryList__item-content">
+                            <img src="<?= $categoryUrl; ?>" alt="">
+                        </div>
+                    </a>
+                </div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+    <?php endif; ?>
+
+</div>
+
+
+
